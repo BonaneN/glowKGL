@@ -12,12 +12,12 @@ export const useCart = () => {
 
 export const CartProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState(() => {
-        const savedCart = localStorage.getItem('beautyVerseCart');
+        const savedCart = localStorage.getItem('glowKGLCart');
         return savedCart ? JSON.parse(savedCart) : [];
     });
 
     useEffect(() => {
-        localStorage.setItem('beautyVerseCart', JSON.stringify(cartItems));
+        localStorage.setItem('glowKGLCart', JSON.stringify(cartItems));
     }, [cartItems]);
 
     const addToCart = (product) => {

@@ -1,6 +1,6 @@
 // Handles base URL, auth tokens from localStorage, and standardizes requests.
 
-const BASE_URL = 'https://bonane00.pythonanywhere.com/beautyVerse';
+const BASE_URL = 'https://bonane00.pythonanywhere.com/glowKGL';
 
 const api = {
     async request(endpoint, options = {}) {

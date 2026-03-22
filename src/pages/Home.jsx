@@ -74,7 +74,7 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* BeautyVerse Difference - Blush Rose Background */}
+            {/* GlowKGL Difference - Blush Rose Background */}
             <section className="py-20 bg-blush-rose/10">
                 <div className="container-custom">
                     <motion.div
@@ -85,7 +85,7 @@ const Home = () => {
                         className="text-center mb-16"
                     >
                         <h2 className="text-5xl font-heading font-bold text-night-bordeaux mb-4">
-                            The BeautyVerse Difference
+                            The GlowKGL Difference
                         </h2>
                         <p className="text-gray-700 text-lg max-w-2xl mx-auto">
                             We're not just a marketplace—we're your trusted beauty companion
@@ -323,7 +323,7 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Join BeautyVerse Community */}
+            {/* Join GlowKGL Community */}
             <section className="py-24 bg-gradient-to-br from-soft-apricot to-cotton-candy/60 text-night-bordeaux relative overflow-hidden">
 
                 <div className="absolute top-0 right-0 w-96 h-96 bg-blush-rose/20 rounded-full blur-3xl"></div>
@@ -338,7 +338,7 @@ const Home = () => {
                         className="text-center max-w-3xl mx-auto"
                     >
                         <h2 className="text-5xl md:text-6xl font-heading font-bold mb-6">
-                            Join the BeautyVerse Community
+                            Join the GlowKGL Community
                         </h2>
                         <p className="text-xl md:text-2xl text-gray-700 mb-10 font-light">
                             Become part of a vibrant community of beauty enthusiasts, professionals, and brands.

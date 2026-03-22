@@ -163,7 +163,7 @@ const Cart = () => {
                             </button>
 
                             <p className="mt-6 text-center text-[9px] text-gray-400 font-bold uppercase tracking-widest leading-relaxed">
-                                Secure payments processed by <br /> BeautyVerse Gateway
+                                Secure payments processed by <br /> GlowKGL Gateway
                             </p>
                         </div>
                     </div>

@@ -117,7 +117,7 @@ const Auth = ({ initialMode = 'login' }) => {
                             <div className="text-center mb-10">
                                 <h1 className="text-3xl font-heading font-black text-night-bordeaux mb-2 tracking-tight">Log in to the community</h1>
                                 <p className="text-gray-500 text-sm font-medium leading-relaxed">
-                                    Welcome back to the beautyVerse community.
+                                    Welcome back to the GlowKGL community.
                                 </p>
                             </div>
 
@@ -202,7 +202,7 @@ const Auth = ({ initialMode = 'login' }) => {
                             <div className="text-center mb-10">
                                 <h1 className="text-3xl font-heading font-black text-night-bordeaux mb-2 tracking-tight">Create account</h1>
                                 <p className="text-gray-500 text-sm font-medium">
-                                    Join us to start your beauty journey with the beautyVerse community.
+                                    Join us to start your beauty journey with the GlowKGL community.
                                 </p>
                             </div>
 

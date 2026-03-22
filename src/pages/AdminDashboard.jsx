@@ -74,7 +74,7 @@ const AdminDashboard = () => {
             <div className="container-custom">
                 <header className="mb-12">
                     <h1 className="text-5xl font-heading font-bold text-night-bordeaux mb-4">Super Admin Dashboard</h1>
-                    <p className="text-lg text-gray-600">Manage your BeautyVerse categories and content</p>
+                    <p className="text-lg text-gray-600">Manage your GlowKGL categories and content</p>
                 </header>
 
                 <div className="grid lg:grid-cols-2 gap-12">

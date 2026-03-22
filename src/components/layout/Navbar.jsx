@@ -162,7 +162,7 @@ const Navbar = () => {
                                 onClick={() => setIsOpen(false)}
                                 className="w-full py-4 text-center bg-gradient-to-r from-blush-rose to-berry-crush text-white font-bold text-lg rounded-full shadow-lg transition-all active:scale-95"
                             >
-                                Join BeautyVerse
+                                Join GlowKGL
                             </Link>
                             <Link
                                 to="/login"

@@ -95,7 +95,7 @@ const AddProductForm = ({ onProductAdded }) => {
                 formDataToSend.append('product_image', imageFile);
 
                 const token = localStorage.getItem('access_token');
-                const baseUrl = 'https://bonane00.pythonanywhere.com/beautyVerse';
+                const baseUrl = 'https://bonane00.pythonanywhere.com/glowKGL';
 
                 console.log('Uploading with FormData to:', `${baseUrl}/products/add-new-product/`);
 
