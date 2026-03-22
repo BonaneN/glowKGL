@@ -21,7 +21,7 @@ const Navbar = () => {
                 {/* 1. Logo Section */}
                 <div className="flex-none">
                     <Link to="/" className="font-heading text-2xl md:text-3xl font-bold text-night-bordeaux whitespace-nowrap">
-                        Beauty<span className="text-blush-rose">Verse</span>
+                        Glow<span className="text-blush-rose">KGL</span>
                     </Link>
                 </div>
 

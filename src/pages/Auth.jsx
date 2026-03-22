@@ -100,7 +100,7 @@ const Auth = ({ initialMode = 'login' }) => {
                 <div className="flex justify-center mb-10">
                     <div className="px-8 py-4 bg-white/50 backdrop-blur-sm rounded-2xl shadow-sm border border-white/20 flex items-center justify-center transform -rotate-1 hover:rotate-0 transition-transform duration-500">
                         <span className="font-heading text-2xl md:text-3xl font-black text-night-bordeaux whitespace-nowrap">
-                            Beauty<span className="text-blush-rose">Verse</span>
+                            Glow<span className="text-blush-rose">KGL</span>
                         </span>
                     </div>
                 </div>

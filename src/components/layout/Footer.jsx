@@ -8,7 +8,7 @@ const Footer = () => {
 
                 <div className="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-5 pb-8">
                     <Link to="/" className="font-heading text-3xl font-bold text-white order-1 md:order-1">
-                        Beauty<span className="text-blush-rose">Verse</span>
+                        Glow<span className="text-blush-rose">KGL</span>
                     </Link>
 
                     <nav className="flex flex-wrap justify-center gap-6 md:gap-8 items-center order-2 md:order-2">
