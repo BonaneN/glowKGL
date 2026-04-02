@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useCart } from '../../context/CartContext';
 import { useBooking } from '../../context/BookingContext';
+import logo from '../../assets/logo_design.svg';
 
 const Navbar = () => {
     const { user, logout } = useAuth();
@@ -20,8 +21,8 @@ const Navbar = () => {
             <div className="h-full px-4 md:px-8 flex items-center justify-between">
                 {/* 1. Logo Section */}
                 <div className="flex-none">
-                    <Link to="/" className="font-heading text-2xl md:text-3xl font-bold text-night-bordeaux whitespace-nowrap">
-                        Glow<span className="text-blush-rose">KGL</span>
+                    <Link to="/" className="font-heading text-2xl md:text-3xl font-bold text-night-bordeaux whitespace-nowrap flex items-center">
+                        <img src={logo} alt="GlowKGL Logo" className="h-10 md:h-12 w-auto object-contain" />
                     </Link>
                 </div>
 
