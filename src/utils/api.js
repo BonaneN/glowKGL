@@ -1,6 +1,6 @@
 // Handles base URL, auth tokens from localStorage, and standardizes requests.
 
-const BASE_URL = 'https://glowkgl.pythonanywhere.com/glowKGL';
+const BASE_URL = 'https://glowkgl.onrender.com/glowKGL';
 
 const api = {
     async request(endpoint, options = {}) {
@@ -91,11 +91,16 @@ const api = {
         return this.request(endpoint, { method: 'DELETE', headers });
     },
 
+    // For FormData uploads (images, files) — Content-Type is auto-set by the browser
+    postForm(endpoint, formData) {
+        return this.request(endpoint, { method: 'POST', body: formData });
+    },
+
     getImageUrl(path) {
         if (!path) return '';
         if (path.startsWith('http')) return path;
         // The base domain for media files on this server
-        const baseUrl = 'https://glowkgl.pythonanywhere.com';
+        const baseUrl = 'https://glowkgl.onrender.com';
         return `${baseUrl}${path.startsWith('/') ? '' : '/'}${path}`;
     }
 };

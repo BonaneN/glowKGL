@@ -94,38 +94,7 @@ const AddProductForm = ({ onProductAdded }) => {
 
                 formDataToSend.append('product_image', imageFile);
 
-                const token = localStorage.getItem('access_token');
-                const baseUrl = 'https://bonane00.pythonanywhere.com/glowKGL';
-
-                console.log('Uploading with FormData to:', `${baseUrl}/products/add-new-product/`);
-
-                const res = await fetch(`${baseUrl}/products/add-new-product/`, {
-                    method: 'POST',
-                    headers: {
-                        ...(token && { 'Authorization': `Bearer ${token}` })
-                    },
-                    body: formDataToSend
-                });
-
-                if (!res.ok) {
-                    const errorText = await res.text();
-                    console.error('--- RAW SERVER ERROR ---');
-                    console.error(errorText);
-
-                    let errorData = {};
-                    try {
-                        errorData = JSON.parse(errorText);
-                    } catch (e) {
-                        console.warn('Response was not JSON');
-                    }
-
-                    console.error('Upload Failed Error Data:', errorData);
-                    const error = new Error(errorData.detail || errorData.error || `Server Error (${res.status})`);
-                    error.data = errorData;
-                    throw error;
-                }
-
-                response = await res.json();
+                response = await api.postForm('/products/add-new-product/', formDataToSend);
             } else {
                 const productData = {
                     name: formData.name,
