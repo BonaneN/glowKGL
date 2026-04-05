@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useBooking } from '../context/BookingContext';
 import { Link } from 'react-router-dom';
 
+
 const Appointments = () => {
     const { bookings, loading, cancelBooking } = useBooking();
 
@@ -24,7 +25,10 @@ const Appointments = () => {
 
                 {loading ? (
                     <div className="flex justify-center py-24">
-                        <div className="animate-spin rounded-full h-14 w-14 border-[3px] border-cotton-candy/30 border-t-blush-rose shadow-xl"></div>
+                        <div className="flex items-center justify-center bg-white rounded-[2rem] shadow-sm border border-gray-100/60 px-8 py-4 animate-pulse">
+                            <span className="text-4xl md:text-5xl font-black text-night-bordeaux tracking-tight">Glow</span>
+                            <span className="text-4xl md:text-5xl font-black text-blush-rose tracking-tight">KGL</span>
+                        </div>
                     </div>
                 ) : bookings.length > 0 ? (
                     <div className="space-y-6">

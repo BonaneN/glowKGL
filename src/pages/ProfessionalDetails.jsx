@@ -4,6 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import { useBooking } from '../context/BookingContext';
 import api from '../utils/api';
 
+
 const ProfessionalDetailsModal = ({ artistId, onClose }) => {
     const { user: authUser } = useAuth();
     const [artist, setArtist] = useState(null);
@@ -141,7 +142,10 @@ const ProfessionalDetailsModal = ({ artistId, onClose }) => {
 
                 {loading ? (
                     <div className="w-full h-96 flex items-center justify-center">
-                        <div className="animate-spin rounded-full h-16 w-16 border-4 border-cotton-candy border-t-blush-rose"></div>
+                        <div className="flex items-center justify-center bg-white rounded-[2rem] shadow-sm border border-gray-100/60 px-8 py-4 animate-pulse">
+                            <span className="text-4xl md:text-5xl font-black text-night-bordeaux tracking-tight">Glow</span>
+                            <span className="text-4xl md:text-5xl font-black text-blush-rose tracking-tight">KGL</span>
+                        </div>
                     </div>
                 ) : (
                     <>

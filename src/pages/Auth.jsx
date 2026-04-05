@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { motion, AnimatePresence } from 'framer-motion';
 
+
 const Auth = ({ initialMode = 'login' }) => {
     const [isLogin, setIsLogin] = useState(initialMode === 'login');
     const [formData, setFormData] = useState({
@@ -98,10 +99,9 @@ const Auth = ({ initialMode = 'login' }) => {
             >
                 {/* Brand Logo Header */}
                 <div className="flex justify-center mb-10">
-                    <div className="px-8 py-4 bg-white/50 backdrop-blur-sm rounded-2xl shadow-sm border border-white/20 flex items-center justify-center transform -rotate-1 hover:rotate-0 transition-transform duration-500">
-                        <span className="font-heading text-2xl md:text-3xl font-black text-night-bordeaux whitespace-nowrap">
-                            Glow<span className="text-blush-rose">KGL</span>
-                        </span>
+                    <div className="flex items-center justify-center transform hover:scale-105 transition-transform duration-500 bg-white rounded-[2rem] shadow-sm border border-gray-100/60 px-10 py-5">
+                        <span className="text-4xl md:text-5xl font-black text-night-bordeaux tracking-tight">Glow</span>
+                        <span className="text-4xl md:text-5xl font-black text-blush-rose tracking-tight">KGL</span>
                     </div>
                 </div>
 
