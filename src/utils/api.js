@@ -1,6 +1,6 @@
 // Handles base URL, auth tokens from localStorage, and standardizes requests.
 
-const BASE_URL = 'https://bonane00.pythonanywhere.com/glowKGL';
+const BASE_URL = 'https://glowkgl.pythonanywhere.com/glowKGL';
 
 const api = {
     async request(endpoint, options = {}) {
@@ -95,7 +95,7 @@ const api = {
         if (!path) return '';
         if (path.startsWith('http')) return path;
         // The base domain for media files on this server
-        const baseUrl = 'https://bonane00.pythonanywhere.com';
+        const baseUrl = 'https://glowkgl.pythonanywhere.com';
         return `${baseUrl}${path.startsWith('/') ? '' : '/'}${path}`;
     }
 };
