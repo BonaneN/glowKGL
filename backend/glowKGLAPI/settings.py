@@ -8,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['bonane00.pythonanywhere.com']
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1').split(',')
 
 # Installed apps
 INSTALLED_APPS = [
@@ -71,13 +71,12 @@ WSGI_APPLICATION = 'glowKGLAPI.wsgi.application'
 # Database (Aiven Postgres / MySQL)
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': config('DB_NAME'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('DB_NAME', default='postgres'),
         'USER': config('DB_USER'),
         'PASSWORD': config('DB_PASSWORD'),
         'HOST': config('DB_HOST'),
-        'PORT': config('DB_PORT', cast=int),
-        'OPTIONS': {'ssl_mode': 'REQUIRED'},
+        'PORT': config('DB_PORT', default=5432, cast=int),
     }
 }
 
@@ -136,4 +135,7 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CORS settings
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = config(
+    'CORS_ALLOWED_ORIGINS',
+    default='http://localhost:5173,http://127.0.0.1:5173'
+).split(',')
