@@ -1,20 +1,34 @@
-from django.shortcuts import render
-from rest_framework import generics
-from .serializers import RegisterSerializer, LoginSerializer
-from rest_framework.permissions import AllowAny
+from rest_framework import generics, permissions
 from rest_framework.response import Response
+from rest_framework.views import APIView
+from rest_framework_simplejwt.views import TokenObtainPairView
+from .serializers import RegisterSerializer, UserProfileSerializer, GlowKGLTokenSerializer
+from .models import User
 
-# Registration endpoint
+
 class RegisterView(generics.CreateAPIView):
     serializer_class = RegisterSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [permissions.AllowAny]
 
-# Login endpoint
-class LoginView(generics.GenericAPIView):
-    serializer_class = LoginSerializer
-    permission_classes = [AllowAny]
 
-    def post(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
+class GlowKGLTokenView(TokenObtainPairView):
+    """Login view — returns access + refresh tokens with roles embedded."""
+    serializer_class = GlowKGLTokenSerializer
+
+
+class MeView(APIView):
+    """
+    GET  /users/me/  — return current user's profile
+    PATCH /users/me/ — update phone_number or profile_picture
+    """
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get(self, request):
+        serializer = UserProfileSerializer(request.user)
+        return Response(serializer.data)
+
+    def patch(self, request):
+        serializer = UserProfileSerializer(request.user, data=request.data, partial=True)
         serializer.is_valid(raise_exception=True)
-        return Response(serializer.validated_data)
+        serializer.save()
+        return Response(serializer.data)

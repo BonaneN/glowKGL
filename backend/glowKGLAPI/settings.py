@@ -88,8 +88,15 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
     ),
-    # Add schema class for drf-spectacular
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+# JWT — use our custom serializer so tokens carry username + roles
+from datetime import timedelta
+SIMPLE_JWT = {
+    'TOKEN_OBTAIN_SERIALIZER': 'users.serializers.GlowKGLTokenSerializer',
+    'ACCESS_TOKEN_LIFETIME': timedelta(hours=6),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
 }
 
 # Swagger / drf-spectacular settings

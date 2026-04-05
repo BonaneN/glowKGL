@@ -1,14 +1,22 @@
 from rest_framework import viewsets, permissions, filters
 from .models import Product, ProductCategory
 from .serializers import ProductSerializer, ProductCategorySerializer
-from glowKGLAPI.permissions import IsOwnerOrReadOnly
+from glowKGLAPI.permissions import IsOwnerOrReadOnly, IsAdminRole
+
 
 class ProductCategoryViewSet(viewsets.ModelViewSet):
     queryset = ProductCategory.objects.all()
     serializer_class = ProductCategorySerializer
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     filter_backends = [filters.SearchFilter]
     search_fields = ['name']
+
+    def get_permissions(self):
+        # Anyone can list/retrieve categories
+        # Only admins can create, update, or delete
+        if self.action in ['create', 'update', 'partial_update', 'destroy']:
+            return [IsAdminRole()]
+        return [permissions.AllowAny()]
+
 
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
@@ -21,7 +29,5 @@ class ProductViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         user = self.request.user
         serializer.save(created_by=user)
-        
-        if user.role == 'client':
-            user.role = 'seller'
-            user.save()
+        # Add seller role without removing any existing roles
+        user.add_role('seller')
