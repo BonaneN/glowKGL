@@ -31,7 +31,7 @@ class Artist(models.Model):
     location = models.CharField(max_length=255)
     instagram = models.URLField(blank=True, null=True)
     tiktok = models.URLField(blank=True, null=True)
-    profile_picture = models.ImageField(upload_to='artist_profiles/', blank=True, null=True)
+    profile_picture = models.ImageField(upload_to='glowkgl/artists/', blank=True, null=True)
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='artist_profiles')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

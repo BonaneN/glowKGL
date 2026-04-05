@@ -13,7 +13,7 @@ class User(AbstractUser):
 
     # Profile fields
     phone_number = models.CharField(max_length=20, blank=True, default='')
-    profile_picture = models.ImageField(upload_to='users/profile_pictures/', blank=True, null=True)
+    profile_picture = models.ImageField(upload_to='glowkgl/users/', blank=True, null=True)
 
     def __str__(self):
         return f"{self.username} ({', '.join(self.roles)})"

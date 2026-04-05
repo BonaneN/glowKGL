@@ -42,7 +42,7 @@ class Product(models.Model):
     final_price = models.DecimalField(max_digits=10, decimal_places=2, editable=False)
     shop_location = models.CharField(max_length=255)
     delivery_option = models.CharField(max_length=20, choices=DELIVERY_OPTIONS, default='Shop Pickup')
-    product_image = models.ImageField(upload_to='products/', blank=True, null=True)
+    product_image = models.ImageField(upload_to='glowkgl/products/', blank=True, null=True)
     category = models.ForeignKey(ProductCategory, on_delete=models.SET_NULL, null=True, related_name='products')
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='products')
     created_at = models.DateTimeField(auto_now_add=True)
