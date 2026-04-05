@@ -3,7 +3,7 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from .models import Artist, ArtistAvailability, ArtistCategory
 from .serializers import ArtistSerializer, ArtistAvailabilitySerializer, ArtistCategorySerializer
-from beautyVerseAPI.permissions import IsOwnerOrReadOnly
+from glowKGLAPI.permissions import IsOwnerOrReadOnly
 
 class ArtistCategoryViewSet(viewsets.ModelViewSet):
     queryset = ArtistCategory.objects.all()

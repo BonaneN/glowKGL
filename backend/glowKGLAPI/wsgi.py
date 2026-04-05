@@ -1,5 +1,5 @@
 """
-WSGI config for beautyVerseAPI project.
+WSGI config for glowKGLAPI project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'beautyVerseAPI.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'glowKGLAPI.settings')
 
 application = get_wsgi_application()

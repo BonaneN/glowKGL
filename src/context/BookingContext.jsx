@@ -19,14 +19,14 @@ export const BookingProvider = ({ children }) => {
         setBookings(localBookings);
 
         // Global slots tracking
-        const globalSlots = JSON.parse(localStorage.getItem('beauty_verse_global_slots') || '[]');
+        const globalSlots = JSON.parse(localStorage.getItem('glowKGL_global_slots') || '[]');
         setGloballyBookedSlots(globalSlots);
 
         setLoading(false);
     };
 
     useEffect(() => {
-        const globalSlots = JSON.parse(localStorage.getItem('beauty_verse_global_slots') || '[]');
+        const globalSlots = JSON.parse(localStorage.getItem('glowKGL_global_slots') || '[]');
         setGloballyBookedSlots(globalSlots);
         if (user) {
             fetchBookings();
@@ -62,7 +62,7 @@ export const BookingProvider = ({ children }) => {
         const newGlobalSlot = { artistId: bookingData.artistId, date: bookingData.date, time: bookingData.time };
         const updatedGlobal = [...globallyBookedSlots, newGlobalSlot];
         setGloballyBookedSlots(updatedGlobal);
-        localStorage.setItem('beauty_verse_global_slots', JSON.stringify(updatedGlobal));
+        localStorage.setItem('glowKGL_global_slots', JSON.stringify(updatedGlobal));
 
         setLoading(false);
         return { success: true, booking: newBooking };
@@ -84,7 +84,7 @@ export const BookingProvider = ({ children }) => {
                     !(s.artistId === bookingToCancel.artistId && s.date === bookingToCancel.date && s.time === bookingToCancel.time)
                 );
                 setGloballyBookedSlots(updatedGlobal);
-                localStorage.setItem('beauty_verse_global_slots', JSON.stringify(updatedGlobal));
+                localStorage.setItem('glowKGL_global_slots', JSON.stringify(updatedGlobal));
             }
 
             return { success: true };
